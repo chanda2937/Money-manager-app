@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Money Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Money Manager</h1>
+
+<div class="summary">
+  <div>Income: ₹<span id="income">0</span></div>
+  <div>Expense: ₹<span id="expense">0</span></div>
+  <div>Balance: ₹<span id="balance">0</span></div>
+</div>
+
+<button id="addBtn">+ Add Transaction</button>
+
+<select id="filter">
+  <option value="all">All</option>
+  <option value="income">Income</option>
+  <option value="expense">Expense</option>
+</select>
+
+<button onclick="sortByAmount()">Sort by Amount</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Sub</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="list"></tbody>
+</table>
+
+<!-- POPUP -->
+<div id="popup" class="hidden">
+  <div class="form-box">
+    <h3>Add Transaction</h3>
+
+    <form id="form">
+      <input type="number" id="amount" placeholder="Amount">
+
+      <input type="date" id="date">
+
+      <div>
+        <label><input type="radio" name="type" value="income"> Income</label>
+        <label><input type="radio" name="type" value="expense"> Expense</label>
+      </div>
+
+      <select id="subcategory">
+        <option value="">Select Subcategory</option>
+        <option>Salary</option>
+        <option>Bonus</option>
+        <option>Food</option>
+        <option>Rent</option>
+        <option>Shopping</option>
+      </select>
+
+      <input type="text" id="desc" placeholder="Description">
+
+      <div class="btns">
+        <button type="submit">Save</button>
+        <button type="button" id="closeBtn">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
